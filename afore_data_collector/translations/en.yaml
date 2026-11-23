@@ -1,0 +1,36 @@
+configuration:
+  listen_port:
+    name: TCP Listen Port
+    description: TCP port for incoming LSW-3 Remote Server B connections (default 10000).
+  mqtt_topic_prefix:
+    name: MQTT Topic Prefix
+    description: Base MQTT topic prefix used for published state payloads.
+  mqtt_discovery_prefix:
+    name: MQTT Discovery Prefix
+    description: Home Assistant MQTT Discovery topic prefix (default homeassistant).
+  inverter_name:
+    name: Inverter Device Name
+    description: Friendly name shown for the inverter device in Home Assistant.
+  inverter_model:
+    name: Inverter Model
+    description: Model label displayed on the inverter device page.
+  offline_timeout_seconds:
+    name: Offline Timeout (seconds)
+    description: Time without live telemetry frames before marking the inverter offline and zeroing instantaneous power.
+  mqtt_host:
+    name: MQTT Broker Host (optional)
+    description: Leave empty to use the official Mosquitto broker automatically via Supervisor.
+  mqtt_port:
+    name: MQTT Broker Port (optional)
+    description: MQTT broker port when configuring a manual broker.
+  mqtt_username:
+    name: MQTT Username (optional)
+    description: MQTT username when configuring a manual broker.
+  mqtt_password:
+    name: MQTT Password (optional)
+    description: MQTT password when configuring a manual broker.
+  log_raw_frames:
+    name: Log Raw V5 Frames
+    description: Output raw hexadecimal frame payloads in the add-on log for troubleshooting.
+network:
+  10000/tcp: TCP port for LSW-3 Remote Server B connections

@@ -1,0 +1,38 @@
+name: "Afore data collector"
+version: "1.0.0"
+slug: "afore_data_collector"
+description: "Local V5 (Server B) telemetry receiver for Afore inverters with LSW-3 dataloggers publishing to Home Assistant via MQTT Discovery"
+url: "https://github.com/YOUR_GITHUB_USERNAME/ha-afore-data-collector"
+arch:
+  - aarch64
+  - amd64
+  - armv7
+init: false
+startup: application
+boot: auto
+services:
+  - mqtt:want
+ports:
+  10000/tcp: 10000
+ports_description:
+  10000/tcp: "TCP port for LSW-3 Remote Server B connection"
+options:
+  listen_port: 10000
+  mqtt_topic_prefix: "afore"
+  mqtt_discovery_prefix: "homeassistant"
+  inverter_name: "Afore Inverter"
+  inverter_model: "BNTxxxKTL (T4)"
+  offline_timeout_seconds: 600
+  log_raw_frames: false
+schema:
+  listen_port: port
+  mqtt_topic_prefix: str
+  mqtt_discovery_prefix: str
+  inverter_name: str
+  inverter_model: str
+  offline_timeout_seconds: int(60,3600)
+  mqtt_host: str?
+  mqtt_port: port?
+  mqtt_username: str?
+  mqtt_password: password?
+  log_raw_frames: bool
