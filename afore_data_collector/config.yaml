@@ -2,7 +2,7 @@ name: "Afore data collector"
 version: "1.0.0"
 slug: "afore_data_collector"
 description: "Local V5 (Server B) telemetry receiver for Afore inverters with LSW-3 dataloggers publishing to Home Assistant via MQTT Discovery"
-url: "https://github.com/YOUR_GITHUB_USERNAME/ha-afore-data-collector"
+url: "https://github.com/ziolek/ha-afore-data-collector"
 arch:
   - aarch64
   - amd64
